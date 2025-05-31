@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Reports | Art code</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../home/styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+            <i class="fas fa-sun light-icon"></i>
+            <i class="fas fa-moon dark-icon"></i>
+        </button>
+    </div>
+    
+    <!-- Header with Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../home/home.html">
+                    <img src="../home/images/logo.png" alt="Art code Logo" class="header-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../home/home.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="reports.html" class="active">Reports</a>
+            </nav>
+            <div class="admin-profile">
+                <span id="adminName">Admin</span>
+                <button id="logoutBtn" class="btn-secondary">Logout</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Reports Dashboard -->
+    <section class="section admin-section">
+        <div class="container">
+            <div class="admin-header">
+                <h1>Mentor Reports Management</h1>
+                <div class="admin-actions">
+                    <div class="filter-options">
+                        <select id="statusFilter" class="form-select">
+                            <option value="all">All Reports</option>
+                            <option value="pending">Pending</option>
+                            <option value="reviewed">Reviewed</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="admin-content">
+                <div class="reports-stats">
+                    <div class="stat-card">
+                        <h3>Total Reports</h3>
+                        <p id="totalReports">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending</h3>
+                        <p id="pendingReports">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Reviewed</h3>
+                        <p id="reviewedReports">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Closed</h3>
+                        <p id="closedReports">0</p>
+                    </div>
+                </div>
+                
+                <div class="reports-table-container">
+                    <table class="table reports-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Student</th>
+                                <th>Mentor</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportsTableBody">
+                            <!-- Reports will be loaded here dynamically -->
+                        </tbody>
+                    </table>
+                    <div id="noReportsMessage" class="no-data-message" style="display: none;">
+                        <p>No reports found.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Report View Modal -->
+    <div class="modal fade" id="reportViewModal" tabindex="-1" aria-labelledby="reportViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportViewModalLabel">Report Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="report-details">
+                        <div class="report-info">
+                            <p><strong>Report ID:</strong> <span id="viewReportId"></span></p>
+                            <p><strong>Date:</strong> <span id="viewReportDate"></span></p>
+                            <p><strong>Status:</strong> <span id="viewReportStatus" class="report-status"></span></p>
+                        </div>
+                        
+                        <div class="report-participants">
+                            <div class="participant">
+                                <h6>Student</h6>
+                                <p id="viewStudentName"></p>
+                                <p id="viewStudentId"></p>
+                            </div>
+                            <div class="participant">
+                                <h6>Mentor</h6>
+                                <p id="viewMentorName"></p>
+                                <p id="viewMentorId"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="report-content-section">
+                            <h6>Report Type</h6>
+                            <p id="viewReportType"></p>
+                            
+                            <h6>Report Content</h6>
+                            <div id="viewReportContent" class="report-content"></div>
+                        </div>
+                        
+                        <div class="admin-feedback-section">
+                            <h6>Admin Feedback</h6>
+                            <textarea id="adminFeedback" class="form-control" rows="4" placeholder="Enter your feedback or notes about this report"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="status-actions">
+                        <button type="button" class="btn btn-outline-secondary" id="markPendingBtn">Mark as Pending</button>
+                        <button type="button" class="btn btn-outline-primary" id="markReviewedBtn">Mark as Reviewed</button>
+                        <button type="button" class="btn btn-outline-success" id="markClosedBtn">Mark as Closed</button>
+                    </div>
+                    <div class="main-actions">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="saveReportBtn">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo and Address -->
+            <div class="footer-section">
+                <img src="../home/images/logo.png" alt="Art code Logo" class="footer-logo" />
+                <p>Connecting students with mentors for a better learning experience.</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../home/home.html">Home</a></li>
+                    <li><a href="../mentors/mentors.html">Mentors</a></li>
+                    <li><a href="../roadmaps/roadmaps.html">Roadmaps</a></li>
+                    <li><a href="../about_us/about.html">About Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@artcode.com</p>
+                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Art code. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../home/script.js"></script>
+    <script src="admin.js"></script>
+    <script src="reports.js"></script>
+</body>
+</html>

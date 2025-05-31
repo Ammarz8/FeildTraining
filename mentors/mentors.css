@@ -1,0 +1,253 @@
+/* Mentors Page Styles */
+
+/* Mentors Hero Section */
+.mentors-hero {
+    background-color: var(--card-bg);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.mentors-hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+}
+
+.mentors-hero-content h1 span {
+    color: var(--accent-color);
+}
+
+.mentors-hero-content p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Mentors Filter Section */
+.mentors-filter {
+    padding: 30px 0;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.search-box {
+    display: flex;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px 0 0 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.search-box button {
+    padding: 0 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.filter-options select {
+    padding: 12px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-width: 150px;
+}
+
+/* Mentors List Section */
+.mentors-list {
+    padding: 30px 0 60px;
+}
+
+.mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.mentor-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mentor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--card-shadow);
+}
+
+.mentor-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mentor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.mentor-info h3 {
+    margin: 0;
+    color: var(--heading-color);
+    font-size: 1.2rem;
+}
+
+.mentor-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.skill-tag {
+    background-color: rgba(208, 162, 247, 0.2);
+    color: var(--accent-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.mentor-body {
+    padding: 20px;
+}
+
+.mentor-description {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mentor-contact {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.mentor-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.request-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    flex: 2;
+}
+
+.request-btn:hover {
+    transform: translateY(-2px);
+}
+
+.report-btn {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.report-btn:hover {
+    background-color: #e9ecef;
+    color: #495057;
+    transform: translateY(-2px);
+}
+
+.report-btn i {
+    font-size: 0.8rem;
+}
+
+.no-mentors-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-color);
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.modal-header {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer {
+    border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-secondary {
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        max-width: 100%;
+    }
+    
+    .filter-options {
+        width: 100%;
+    }
+    
+    .filter-options select {
+        width: 100%;
+    }
+    
+    .mentors-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}

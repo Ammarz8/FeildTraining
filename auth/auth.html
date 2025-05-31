@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Login | Art code</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../home/styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="user-profile.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+            <i class="fas fa-sun light-icon"></i>
+            <i class="fas fa-moon dark-icon"></i>
+        </button>
+    </div>
+    
+    <!-- Header with Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../home/home.html">
+                    <img src="../home/images/logo.png" alt="Art code Logo" class="header-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../home/home.html">Home</a>
+                <a href="../mentors/mentors.html">Mentors</a>
+                <a href="../roadmaps/roadmaps.html">Roadmaps</a>
+                <a href="../about_us/about.html">About Us</a>
+            </nav>
+            <a href="auth.html" class="btn-primary nav-btn active">Get started</a>
+        </div>
+    </header>
+    
+    <!-- Auth Section -->
+    <section class="section auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <img src="../home/images/logo.png" alt="Art code Logo" class="auth-logo">
+                    <h2>Welcome to Art code</h2>
+                    <p>Sign up or log in to get started</p>
+                </div>
+                
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Log In</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+                
+                <!-- Login Form -->
+                <div class="auth-form-container" id="login-form">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn-primary w-100">Log In</button>
+                    </form>
+                </div>
+                
+                <!-- Sign Up Form -->
+                <div class="auth-form-container" id="signup-form" style="display: none;">
+                    <div class="user-type-selector">
+                        <p>I want to register as:</p>
+                        <div class="user-type-options">
+                            <button type="button" class="user-type-btn active" data-type="student">Student</button>
+                            <button type="button" class="user-type-btn" data-type="mentor">Mentor</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Student Signup Form -->
+                    <form id="studentSignupForm">
+                        <div class="form-group">
+                            <label for="studentUsername">Username</label>
+                            <input type="text" id="studentUsername" class="form-control" required>
+                        </div>
+                        <!-- Profile picture field removed -->
+                        <div class="form-group">
+                            <label for="studentEmail">Email</label>
+                            <input type="email" id="studentEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentPassword">Password</label>
+                            <input type="password" id="studentPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentContact">Contact Number</label>
+                            <input type="tel" id="studentContact" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn-primary w-100">Sign Up as Student</button>
+                    </form>
+                    
+                    <!-- Mentor Signup Form -->
+                    <form id="mentorSignupForm" style="display: none;">
+                        <div class="form-group">
+                            <label for="mentorUsername">Username</label>
+                            <input type="text" id="mentorUsername" class="form-control" required>
+                        </div>
+                        <!-- Profile picture field removed -->
+                        <div class="form-group">
+                            <label for="mentorEmail">Email</label>
+                            <input type="email" id="mentorEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mentorPassword">Password</label>
+                            <input type="password" id="mentorPassword" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mentorContact">Contact Number</label>
+                            <input type="tel" id="mentorContact" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mentorSkills">Skills (comma separated)</label>
+                            <input type="text" id="mentorSkills" class="form-control" placeholder="e.g., JavaScript, Python, React" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mentorDescription">Description</label>
+                            <textarea id="mentorDescription" class="form-control" rows="4" placeholder="Tell students about your experience and expertise" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-100">Sign Up as Mentor</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo and Address -->
+            <div class="footer-section">
+                <img src="../home/images/logo.png" alt="Art code Logo" class="footer-logo" />
+                <p>Connecting students with mentors for a better learning experience.</p>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../home/home.html">Home</a></li>
+                    <li><a href="../mentors/mentors.html">Mentors</a></li>
+                    <li><a href="../roadmaps/roadmaps.html">Roadmaps</a></li>
+                    <li><a href="../about_us/about.html">About Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@artcode.com</p>
+                <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Art code. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../home/script.js"></script>
+    <script src="auth.js"></script>
+    <script src="common.js"></script>
+</body>
+</html>

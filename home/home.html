@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Art code</title>
+    <!-- Bootstrap CSS for Mentors Slider -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="user-profile.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+            <i class="fas fa-sun light-icon"></i>
+            <i class="fas fa-moon dark-icon"></i>
+        </button>
+    </div>
+    
+    <!-- Header with Navigation -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="images/Logo.png" alt="Art code Logo" class="header-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="home.html" class="active">Home</a>
+                <a href="../mentors/mentors.html">Mentors</a>
+                <a href="../roadmaps/roadmaps.html">Roadmaps</a>
+                <a href="../about_us/about.html">About Us</a>
+                <a href="../admin/reports.html">Admin</a>
+            </nav>
+            <a href="../auth/auth.html" class="btn-primary nav-btn">Get started</a>
+        </div>
+    </header>
+    
+    <!-- Landing Page Hero Section -->
+    <section class="section hero-section">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>A <span>bridge</span> between learning and doing - with mentorship that matters.</h1>
+                    <p>Learn at your own pace, with lifetime access on mobile and desktop</p>
+                    <a href="../auth/auth.html" class="btn-primary">Get started</a>
+                </div>
+
+                <div class="hero-img">
+                    <img src="images/logo.png" alt="Art code Logo" class="logo-main">
+                    <div class="card tagline">
+                        <span>Programming Mentorship<br><small>That Makes a Difference</small></span>
+                    </div>
+                    <div class="card courses">100+ Mentors<br><small>Multiple Tracks</small></div>
+                    <div class="card students">
+                        +50<br><small>Dedicated students per day</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="section why-choose-us">
+        <div class="container">
+            <h2>What Makes Us Different</h2>
+            <div class="why-choose-us-values">
+                <div class="why-choose-us-card" id="card1">
+                    <img src="images/Guidance.png" alt="Experienced Experts"/>
+                    <h3>Tailored Guidance</h3>
+                    <p>Connect students with the most suitable mentors based on skills, goals, and availability.</p>
+                </div>
+                <div class="why-choose-us-card" id="card2">
+                    <img src="images/timetable.png" alt="Flexible Scheduling"/>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Enable students and mentors to meet anytime, anywhere, without any additional travel costs.</p>
+                </div>
+                <div class="why-choose-us-card" id="card3">
+                    <img src="images/statistics.png" alt="statistics"/>
+                    <h3>Performance Stats</h3>
+                    <p>Display performance metrics such as the number of sessions and the attendance rate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentors Slider Section -->
+    <section class="section mentors-section py-5">
+        <div class="container">
+            <div class="section-header mb-5">
+                <p class="text-uppercase key-persons">KEY PERSONS</p>
+                <h1 class="section-title">Meet our Outstanding Mentors</h1> 
+            </div>
+            
+            <div id="mentorsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mentor-card">
+                                    <div class="mentor-image-container">
+                                        <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&w=1000&auto=format&fit=crop" alt="Paulo Oliveira" class="mentor-image">
+                                    </div>
+                                    <h3 class="mentor-name mt-4">Paulo Oliveira</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mentor-card">
+                                    <div class="mentor-image-container">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000&auto=format&fit=crop" alt="Christian Howard" class="mentor-image">
+                                    </div>
+                                    <h3 class="mentor-name mt-4">Christian Howard</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mentor-card">
+                                    <div class="mentor-image-container">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Jimmy Cooper" class="mentor-image">
+                                    </div>
+                                    <h3 class="mentor-name mt-4">Jimmy Cooper</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Slide -->
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mentor-card">
+                                    <div class="mentor-image-container">
+                                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1000&auto=format&fit=crop" alt="David Kim" class="mentor-image">
+                                    </div>
+                                    <h3 class="mentor-name mt-4">David Kim</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mentor-card">
+                                    <div class="mentor-image-container">
+                                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=1000&auto=format&fit=crop" alt="Michael Johnson" class="mentor-image">
+                                    </div>
+                                    <h3 class="mentor-name mt-4">Michael Johnson</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mentor-card">
+                                    <div class="mentor-image-container">
+                                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop" alt="Robert Smith" class="mentor-image">
+                                    </div>
+                                    <h3 class="mentor-name mt-4">Robert Smith</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mentorsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mentorsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Students Section -->
+    <!-- Top students section removed -->
+
+    <!-- FAQ Section -->
+    <section class="section faq-section-wrapper">
+        <div class="faq-section">
+            <h4 class="faq-info">MORE INFO</h4>
+            <h1 class="faq-title">Common questions</h1>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What do we offer?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        This platform connects students seeking programming guidance with experienced mentors. You can find mentors, book sessions, and learn various programming technologies.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I find a mentor?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Students can search and filter mentors by programming technology, availability, and ratings to find the perfect match for their learning needs.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I book and pay for a session?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Once you've chosen a mentor, you can view their available sessions or courses and book them directly through their available payment methods.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I become a mentor?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Experienced professionals can register as mentors, set up a detailed profile showcasing their expertise and experience, define their availability, and set prices for their sessions or courses.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I manage bookings and communicate with students?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        Mentors can communicate with their students via our built-in messaging system.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is my data and payment information secure?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <strong>Yes, security is a top priority, to ensure a safe and trustworthy environment.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo and Address -->
+            <div class="footer-section">
+                <img src="images/logo.png" alt="Art code Logo" class="footer-logo" />
+                <p>Connecting students with mentors for a better learning experience.</p>
+            </div>
+
+            <!-- Company -->
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">students</a></li>
+                    <li><a href="#">mentors</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Product -->
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Social -->
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="common.js"></script>
+</body>
+</html>
